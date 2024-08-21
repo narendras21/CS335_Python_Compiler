@@ -1,0 +1,43 @@
+beginfunc Klass_type_int :
+	ra popparam
+	x popparam 
+	pushparam "this is int"
+	call PRINT 1
+	goto ra
+	endfunc
+beginfunc SubKlass_type_float :
+	ra popparam
+	y popparam 
+	pushparam "this is float"
+	call PRINT 1
+	goto ra
+	endfunc
+beginfunc SubKlass_type_str :
+	ra popparam
+	s popparam 
+	pushparam "this is string"
+	call PRINT 1
+	goto ra
+	endfunc
+beginfunc global_main_ :
+	ra popparam
+	pushparam 10
+	method_for a
+	call Klass_type_int 1
+	pop_return t0
+	pushparam 9
+	method_for b
+	call Klass_type_int 1
+	pop_return t1
+	pushparam 5.4
+	method_for b
+	call SubKlass_type_float 1
+	pop_return t2
+	goto ra
+	endfunc
+@program start :
+	t3 = __name__ == "__main__"
+	ifz t3 goto L14
+	pushparam ra
+	call global_main_ 0
+L14:

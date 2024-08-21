@@ -1,0 +1,49 @@
+,,,,,,,,
+TableName:,global,Parent: NULL,Child(s): ,Klass,SubKlass,main
+Name,Signature,Token,Type,Size,Offset,LineNo,NumArgs,ArgNum
+Klass,,CLASS,class,100,0,1,0,0
+SubKlass,,CLASS,class,100,200,4,0,0
+main,,FUNC,none,1,400,9,0,0
+
+
+,,,,,,,,
+TableName:,Klass,Parent: global,Child(s): ,type,SubKlass
+Name,Signature,Token,Type,Size,Offset,LineNo,NumArgs,ArgNum
+self,,PARAM,Klass,100,100,1,0,0
+type,int,FUNC,none,1,0,2,1,0
+
+
+,,,,,,,,
+TableName:,type,Parent: Klass,Child(s): 
+Name,Signature,Token,Type,Size,Offset,LineNo,NumArgs,ArgNum
+x,,PARAM,int,4,0,2,0,1
+
+
+,,,,,,,,
+TableName:,SubKlass,Parent: Klass,Child(s): ,type,type
+Name,Signature,Token,Type,Size,Offset,LineNo,NumArgs,ArgNum
+self,,PARAM,Klass,100,100,4,0,0
+type,,FUNC,none,1,0,4,1,0
+type,float,FUNC,none,1,101,5,1,0
+type,str,FUNC,none,1,102,7,1,0
+
+
+,,,,,,,,
+TableName:,type,Parent: SubKlass,Child(s): 
+Name,Signature,Token,Type,Size,Offset,LineNo,NumArgs,ArgNum
+y,,PARAM,float,8,0,5,0,1
+
+
+,,,,,,,,
+TableName:,type,Parent: SubKlass,Child(s): 
+Name,Signature,Token,Type,Size,Offset,LineNo,NumArgs,ArgNum
+s,,PARAM,str,256,0,7,0,1
+
+
+,,,,,,,,
+TableName:,main,Parent: global,Child(s): 
+Name,Signature,Token,Type,Size,Offset,LineNo,NumArgs,ArgNum
+a,,NAME,Klass,8,0,11,0,0
+b,,NAME,SubKlass,8,8,12,0,0
+
+
